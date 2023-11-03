@@ -1,3 +1,7 @@
-ul{
-    list-style-type: none;
+body{
+    background-color: #F2F0F8;
+}
+.weather-app{
+    background-color: #ffff;
+    max-width:600px ;
 }
