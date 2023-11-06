@@ -66,14 +66,15 @@ main{
     font-size: 88px;
     font-weight: bold;
     margin-left: 10px;
+    
 }
 
 footer{
     border-top: 1px solid #f9f7fe;
-    padding:20px 0 0 0;
+    padding: 30px 0 0 0;
     text-align: center;
-    font-size: 12px;
-    color:rgba(0,0,0 ,0.6);
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.6);
 }
 .weather-data-body{
     display: flex;
