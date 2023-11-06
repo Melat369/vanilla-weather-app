@@ -8,35 +8,60 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Syne+Mono&display=swap"
+      rel="stylesheet"
+    />
     <title>Weather App</title>
   </head>
   <body>
-    <header>
-      <form action="">
-        <input type="search" placeholder="Search for a City" id="input-city">
-        <input type="submit" value="Search">
-      </form>
-
-    </header>
-    <main>
-     <div>
-      <h1>Addis Ababa</h1>
-      <p>
-        Saturday 15:00, Scattered Clouds 
-        <br>
-        Humidity 55.3%, Wind 33km/sec
-      </p>
-     </div>
-     <div>
-
-      <img src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png" alt="clowdy">
-            12° C||F
-     </div>
-    </main>
-    <footer>
-      <small><a href="https://github.com/Melat369/vanilla-weather-app.git" target="_blank">Open Source Code by</a> : Melat Tesfaye</small>
-
-    </footer>
+    <div class="weather-app">
+      <header>
+        <form action="">
+          <input
+            type="search"
+            placeholder="Search for a City"
+            id="input-city"
+          />
+          <input type="submit" value="Search" id="search-btn" />
+        </form>
+      </header>
+      <main>
+        <div class="weather-data-body">
+          <div>
+            <h1 class="weather-app-city">Addis Ababa</h1>
+            <p class="weather-app-details">
+              Saturday 15:00 , Scattered Clouds
+              <br />
+              Humidity <strong>55.3%</strong>, Wind <strong>33km/sec</strong>
+            </p>
+          </div>
+          <div class="weather-app-container">
+              <!-- <img
+              class="weather-app-img"
+                src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
+                alt="clowdy"
+              /> -->
+            <div class="weather-app-icon">🌤️</div>
+            <div class="weather-app-temp">12</div>
+            <div class="weather-app-unit">°C</div>
+            </div>
+          </div>
+        </div>
+      </main>
+      <footer>
+        <small
+          ><a
+            href="https://github.com/Melat369/vanilla-weather-app.git"
+            target="_blank"
+            >Open Source Code by</a
+          >
+          : Melat Tesfaye</small
+        >
+      </footer>
+    </div>
     <script src="src/index.js"></script>
   </body>
 </html>
