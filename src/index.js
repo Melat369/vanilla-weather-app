@@ -1,20 +1,44 @@
 function updateWeather(result) {
   let tempResponse = document.querySelector("#temperature");
-  let temperature = result.data.temperature.current;
   let city = document.querySelector("#city");
- console.log(result.data);
-  city.innerHTML = result.data.city;
-  tempResponse.innerHTML = Math.round(temperature);
-
   let condition = document.querySelector("#description");
-  condition.innerHTML = result.data.condition.description;
-
   let humid = document.querySelector("#humidity");
   let wind = document.querySelector("#wind");
+  let time = document.querySelector("#time");
+  let temperature = result.data.temperature.current;
+  let iconElement = document.querySelector("#icon");
+ 
+  let date = new Date(result.data.time * 1000);
 
-  humid.innerHTML = result.data.temperature.humidity ;
+  console.log(result.data);
+  time.innerHTML =  timeHandler(date);
+  city.innerHTML = result.data.city;
+  tempResponse.innerHTML = Math.round(temperature);
+  condition.innerHTML = result.data.condition.description;
+  humid.innerHTML = result.data.temperature.humidity;
   wind.innerHTML = result.data.wind.speed;
+  iconElement.innerHTML = `<img src = "${result.data.condition.icon_url}" class ="weather-app-icon"/>`;
+}
+function timeHandler(date) {
+   let hr = date.getHours();
+  let min= date.getMinutes();
 
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  let day = days[date.getDay()];
+
+  if (min < 10) {
+    min = `0${min}`;
+  }
+
+  return `${day} ${hr}:${min} `;
 }
 
 function searchCity(city) {
@@ -29,11 +53,11 @@ function searchCity(city) {
 function handleSearchSubmit(event) {
   event.preventDefault();
   let input = document.querySelector("#input-city");
-  
+
   searchCity(input.value);
 }
 
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
   let searching = document.querySelector("#search-form");
   searching.addEventListener("submit", handleSearchSubmit);
 });
